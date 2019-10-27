@@ -1,4 +1,4 @@
-println this
+context = this
 
 def call(Closure body) {
     def jarvis = new Object() {
@@ -16,5 +16,5 @@ def call(Closure body) {
 def methodMissing(String name, args) {
     println "name = ${name}"
     println "args[0] = ${args[0]}"
-    return [:]
+    return context
 }
