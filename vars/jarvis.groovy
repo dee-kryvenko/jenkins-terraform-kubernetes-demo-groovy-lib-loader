@@ -3,7 +3,7 @@ def call(Closure body) {
         def version
         void jarvis(context) {
             context.metaClass.methodMissing { String name, args ->
-                return context.jarvisHcl.get(name, args)
+                return context.jarvisHcl.get(context, name, args)
             }
         }
     }
