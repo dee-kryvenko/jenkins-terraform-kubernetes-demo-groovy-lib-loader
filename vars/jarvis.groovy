@@ -1,4 +1,4 @@
-context = this
+def context = this
 
 def call(Closure body) {
     def jarvis = new Object() {
