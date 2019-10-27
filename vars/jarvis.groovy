@@ -1,10 +1,7 @@
 def call(Closure body) {
     def jarvis = new Object() {
         def version
-        def version(String version) {
-            this.version = version
-        }
-        def context(context) {
+        def setContext(context) {
             context.metaClass.methodMissing { String name, args ->
                 return context.jarvisHcl.get(name, args)
             }
