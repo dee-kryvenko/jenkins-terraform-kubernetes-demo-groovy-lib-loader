@@ -6,8 +6,6 @@ def call(Closure body) {
         }
         def context(context) {
             context.metaClass.methodMissing { name, args ->
-                println "name = ${name}"
-                println "args[0] = ${args[0]}"
                 return context
             }
         }
