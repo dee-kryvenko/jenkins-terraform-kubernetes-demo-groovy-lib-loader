@@ -6,7 +6,7 @@ def call(Closure body) {
         }
         def context(context) {
             context.metaClass.methodMissing { name, args ->
-                return context.jarvisHcl.call1(name, args)
+                return context.jarvisHcl.get(name, args)
             }
         }
     }
