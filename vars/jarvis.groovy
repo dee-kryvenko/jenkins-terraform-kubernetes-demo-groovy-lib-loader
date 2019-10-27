@@ -5,7 +5,7 @@ def call(Closure body) {
             this.version = version
         }
         def context(context) {
-            context.metaClass.methodMissing {
+            context.metaClass.methodMissing { name, args ->
                 println "name = ${name}"
                 println "args[0] = ${args[0]}"
                 return context
