@@ -1,3 +1,5 @@
+echo this
+
 def call(Closure body) {
     def jarvis = new Object() {
         def version
