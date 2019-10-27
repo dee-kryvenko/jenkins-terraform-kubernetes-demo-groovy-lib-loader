@@ -1,6 +1,12 @@
 def context = this
 
 def call(Closure body) {
+    delegate.metaClass.methodMissing {
+        println "name = ${name}"
+        println "args[0] = ${args[0]}"
+        return delegate
+    }
+    
     def jarvis = new Object() {
         def version
         def version(String version) {
@@ -11,10 +17,4 @@ def call(Closure body) {
     body.setResolveStrategy(Closure.DELEGATE_FIRST)
     body.call()
     library "jarvis@${jarvis.version}"
-}
-
-def methodMissing(String name, args) {
-    println "name = ${name}"
-    println "args[0] = ${args[0]}"
-    return context
 }
