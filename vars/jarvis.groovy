@@ -1,5 +1,3 @@
-def context = this
-
 def call(Closure body) {
     def jarvis = new Object() {
         def version
@@ -7,10 +5,10 @@ def call(Closure body) {
             this.version = version
         }
         def context(context) {
-            delegate.metaClass.methodMissing {
+            context.metaClass.methodMissing {
                 println "name = ${name}"
                 println "args[0] = ${args[0]}"
-                return delegate
+                return context
             }
         }
     }
