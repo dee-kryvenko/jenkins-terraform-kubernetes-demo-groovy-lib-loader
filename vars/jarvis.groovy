@@ -1,11 +1,10 @@
 def call(Closure body) {
     def jarvis = new Object() {
         def version
-        def jarvis
-        void setJarvis(context) {
+        void jarvis(context) {
             context.metaClass.methodMissing { String name, args ->
                 println "Patching for HCL, part 1"
-                context.jarvisHcl.get(name, args)
+                return context.jarvisHcl.get(name, args)
             }
         }
     }
