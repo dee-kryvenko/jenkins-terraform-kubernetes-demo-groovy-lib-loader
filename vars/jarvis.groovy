@@ -1,4 +1,4 @@
-echo this
+println this
 
 def call(Closure body) {
     def jarvis = new Object() {
