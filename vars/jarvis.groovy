@@ -3,7 +3,7 @@ def call(Closure body) {
         def version
         void jarvis(context) {
             // context.metaClass.originalMethodMissing = context.metaClass.methodMissing
-            context.metaClass.originalMethodMissing = context.metaClass.getMetaMethod("methodMissing", [String, []] as Class[])
+            context.metaClass.originalMethodMissing = context.metaClass.getMetaMethod("methodMissing", [String, List] as Class[])
             context.metaClass.methodMissing { String name, args ->
                 return context.jarvisHcl.get(context, name, args)
             }
