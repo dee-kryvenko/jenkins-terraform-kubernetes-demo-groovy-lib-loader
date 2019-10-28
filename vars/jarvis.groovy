@@ -14,5 +14,5 @@ def call(Closure body) {
 }
 
 def call() {
-    context.jarvisHcl.run()
+    context.jarvisHcl.done()
 }
