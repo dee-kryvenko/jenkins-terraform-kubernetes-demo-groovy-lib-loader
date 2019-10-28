@@ -14,6 +14,5 @@ def call(Closure body) {
 }
 
 def call(context) {
-    context.steps.echo "jjjj"
     context.jarvisHcl.done(context.steps)
 }
