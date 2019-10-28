@@ -13,6 +13,6 @@ def call(Closure body) {
     library "jarvis@${jarvis.version}"
 }
 
-def call() {
-    context.jarvisHcl.done()
+def call(context) {
+    context.jarvisHcl.done(context.steps)
 }
