@@ -8,7 +8,7 @@ def call(Closure body) {
         }
     }
     body.setDelegate(jarvis)
-    body.setResolveStrategy(Closure.DELEGATE_FIRST)
+    body.setResolveStrategy(Closure.DELEGATE_ONLY)
     body.call()
     library "jarvis@${jarvis.version}"
 }
